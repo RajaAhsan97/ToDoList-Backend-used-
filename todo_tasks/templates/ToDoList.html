@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+        {% for field in task_form %}
+            {{field.label_tag}} {{field}}
+        {% endfor %}
+        <input type="submit" name="Add Task" class="AddButton">
+        {% csrf_token %}
+    </form>
+
+    {% if tasks %}
+        <table class="tasksTable">
+            <tr> 
+                <th> S.no </th>
+                <th> Task </th>
+                <th> Actions </th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td> {{task.order}} </td>
+                <td id="task"> {{task.task}} <br>
+                    <hr> </hr>
+                     <p> <em> {{task.created}}</em> </p>
+                </td>
+                <td id="taskAction">
+                    <a href="{% url 'todoList:update-task' task.id task.User.id %}" class="update-button"> Update </a>
+                    
+                    <a href="{% url 'todoList:delete-task' task.id task.User.id %}" class="delete-button"> Delete </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <li> No tasks, Please add your task </li>
+    {% endif %}
+{% endblock %}

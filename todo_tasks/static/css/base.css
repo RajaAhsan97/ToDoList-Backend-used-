@@ -1,0 +1,66 @@
+
+
+h3 {
+    background-color: pink;
+    text-align: center;
+}
+
+#id_task {
+    width: 90%;
+    height: 8%;
+    border-radius: 10px;
+}
+
+.AddButton {
+    background-color: lightgreen;
+    border-radius: 10px;
+    height: 7%;
+}
+
+.tasksTable {
+    width: 100%;
+}
+
+.tasksTable th {
+    border: 2px solid black;
+    text-align: center; 
+}
+
+.tasksTable td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px dashed black;
+}
+
+.tasksTable #task {
+    text-align: left;
+    border-left: 1px solid grey;
+}
+
+.tasksTable #taskAction {
+    border-left: 1px solid grey;
+    width: 20%;
+}
+
+.tasksTable p {
+    display: inline;
+}
+
+.selected {
+    color: red;
+}
+
+.update-button {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightgreen;
+}
+
+.delete-button {
+    text-decoration: none;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightcoral;
+}
